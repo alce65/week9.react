@@ -1,16 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { robotsReducer } from '../../features/robots/reducers/reducer';
+import { usersReducer } from '../../features/users/reducers/reducer';
 
 export const store = configureStore({
     reducer: {
-        // counter: counterReducer,
+        robots: robotsReducer,
+        user: usersReducer,
     },
 });
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
-export type AppThunk<ReturnType = void> = ThunkAction<
-    ReturnType,
-    RootState,
-    unknown,
-    Action<string>
->;

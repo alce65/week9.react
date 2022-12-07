@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from './core/app/store';
+import { store } from '../../store/store';
 import App from './App';
 
 test('renders Robots title', () => {
