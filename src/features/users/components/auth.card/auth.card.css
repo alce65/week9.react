@@ -1,0 +1,44 @@
+.auth-wrapper {
+    background-color: var(--color_background_secondary);
+    border: 1px solid goldenrod;
+    max-width: 350px;
+    margin: 0.5rem auto;
+}
+
+.auth-wrapper h3 {
+    color: var(--color_favorite);
+}
+
+.auth-wrapper form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.auth-wrapper div {
+    width: 100%;
+}
+
+.auth-wrapper input {
+    border: 0;
+    color: var(--color_favorite);
+    border-block-end: 2px solid;
+    background-color: inherit;
+    padding: 0.5rem;
+    width: 80%;
+}
+
+.auth-wrapper input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: white;
+}
+
+.auth-wrapper input:focus-visible {
+    outline: none;
+    /* white auto 1px; */
+}
+
+.auth-wrapper button {
+    margin: 1rem;
+    width: 50%;
+}
