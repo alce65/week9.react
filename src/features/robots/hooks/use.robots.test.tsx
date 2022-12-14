@@ -228,7 +228,7 @@ describe('Given the custom hook "useRobots"', () => {
         });
 
         test(`Then the hock call to the repository to ADD  a new robot 
-           and an error is produced`, async () => {
+            and an error is produced`, async () => {
             await waitFor(() => {
                 current.handleAdd(mockAddedRobot);
             });
