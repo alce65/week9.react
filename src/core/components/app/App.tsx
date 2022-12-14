@@ -1,16 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './app.css';
+import { Layout } from '../layout/layout';
+import { getMenuItems } from '../../services/menu';
+import { AppRoutes } from '../routes/app.routes';
+import { useUsers } from '../../../features/users/hooks/use.users';
+import { useEffect, useState } from 'react';
 
-function App() {
+export function App() {
+    const { logState } = useUsers();
+
+    const initialItems = getMenuItems(logState().isLogged);
+    const isUserLogged = logState().isLogged;
+
+    const [items, setItems] = useState(initialItems);
+    useEffect(() => {
+        setItems(getMenuItems(isUserLogged));
+    }, [isUserLogged]);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <h1>Robots</h1>
-            </header>
+        <div className="App" role={'application'}>
+            <Layout items={items}>
+                <AppRoutes></AppRoutes>
+            </Layout>
         </div>
     );
 }
-
-export default App;
