@@ -53,6 +53,7 @@ describe('Given Add component and render it', () => {
             await userEvent.type(input, mockTyped);
             expect(input).toHaveValue(mockTyped);
         });
+        //     Añadir tests de otros inputs
         //     test('Then typed text in second input should be in the screen', () => {
         //         const mockTyped = 'Test user';
         //         const input = screen.getByRole(formElements[1].role, {

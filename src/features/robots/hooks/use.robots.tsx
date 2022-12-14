@@ -11,9 +11,7 @@ export const useRobots = () => {
     // const [first, setFirst] = useState([]);
     // se sustituye por el mecanismo unidireccional proporcionado por redux
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { robots, actualRobot } = useAppSelector(
-        (state: RootState) => state.robotsState
-    );
+    const { robots } = useAppSelector((state: RootState) => state.robotsState);
     const dispatcher = useAppDispatch();
     const repoRobot = useMemo(() => new RobotRepository(), []);
 

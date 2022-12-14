@@ -10,7 +10,7 @@ const mockedNavigate = jest.fn().mockReturnValue(<></>);
 
 jest.mock('../../hooks/use.users');
 jest.mock('react-router-dom', () => ({
-    ...(jest.requireActual('react-router-dom') as any),
+    ...jest.requireActual('react-router-dom'),
     useNavigate: () => mockedUsedNavigate,
     Navigate: () => mockedNavigate(),
 }));

@@ -16,9 +16,8 @@
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
+    font-family: 'Raleway', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+        'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 98vh;
@@ -27,7 +26,6 @@ body {
     padding: 2rem;
     background-color: var(--color_background);
     color: var(--color_primary);
-    font-family: 'Raleway', sans-serif;
 }
 ul,
 li {
@@ -52,6 +50,7 @@ main {
 }
 
 .robot-menu__item {
+    /* Sin cambios */
 }
 .robot-menu__link {
     display: block;

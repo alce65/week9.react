@@ -61,8 +61,7 @@ export const useUsers = () => {
 
     const handleAddFavorites = async (robot: Partial<Robot>) => {
         try {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const addedRobot = await repoUser.addFavorites(robot);
+            // Para el futuro const addedRobot = await repoUser.addFavorites(robot);
             //@TODO dispatcher(ac.addFavoritesActionCreator());
         } catch (error) {
             displayError(error as Error);
@@ -71,8 +70,7 @@ export const useUsers = () => {
 
     const handleDeleteFavorites = async (robot: Partial<Robot>) => {
         try {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            const deletedRobot = await repoUser.deleteFavorites(robot);
+            // Para el futuro const deletedRobot = await repoUser.deleteFavorites(robot);
             //@TODO dispatcher(ac.deleteFavoritesActionCreator());
         } catch (error) {
             displayError(error as Error);

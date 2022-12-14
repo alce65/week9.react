@@ -6,7 +6,7 @@ import { UserRepository } from './user.repository';
 describe('Given an instance of UserRepository', () => {
     let repo: UserRepository;
     beforeEach(() => {
-        repo = new UserRepository('http://forCoverOptionLine');
+        repo = new UserRepository('https://forCoverOptionLine');
         repo = new UserRepository();
     });
 
@@ -97,7 +97,6 @@ describe('Given an instance of UserRepository', () => {
     describe('When we use service.deleteFavorites()', () => {
         test(`Then if all are OK,
                 it should return a Promise of the updated user favorites`, async () => {
-            const mockFavorite: Robot = mockRobot;
             const mockUpdatedUser = {
                 ...mockUser,
                 favorites: [],

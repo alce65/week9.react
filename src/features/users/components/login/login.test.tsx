@@ -27,37 +27,40 @@ describe('Given Login component and render it', () => {
             </Provider>
         );
     });
-    describe('When the component has been render', () => {
+    describe('When the component LOGIN has been render', () => {
         test('Then it should display the title', () => {
-            const title = /Login/i;
-            const element = screen.getByText(title);
-            expect(element).toBeInTheDocument();
+            const loginTitle = /Login/i;
+            const loginElement = screen.getByText(loginTitle);
+            expect(loginElement).toBeInTheDocument();
         });
-        test('Then it should display a form with 2 inputs and a button', () => {
+        test('Then LOGIN should display a form with 2 inputs and a button', () => {
             formElements.forEach((item) => {
-                const element: HTMLFormElement = screen.getByRole(item.role, {
-                    name: item.name,
-                });
-                expect(element).toBeInTheDocument();
+                const loginElement: HTMLFormElement = screen.getByRole(
+                    item.role,
+                    {
+                        name: item.name,
+                    }
+                );
+                expect(loginElement).toBeInTheDocument();
             });
         });
     });
     describe('When the user type in the inputs', () => {
-        test('Then typed text in first input should be in the screen', async () => {
-            const mockTyped = 'Test user';
-            const input = screen.getByRole(formElements[0].role, {
+        test('Then typed text in NAME input (1) should be in the screen', async () => {
+            const mockTyped = 'Test login user';
+            const inputName = screen.getByRole(formElements[0].role, {
                 name: formElements[0].name,
             });
-            await userEvent.type(input, mockTyped);
-            expect(input).toHaveValue(mockTyped);
+            await userEvent.type(inputName, mockTyped);
+            expect(inputName).toHaveValue(mockTyped);
         });
-        test('Then typed text in second input should be in the screen', async () => {
+        test('Then typed text in PASSWD input (2) should be in the screen', async () => {
             const mockTyped = 'Test passwd';
-            const input = screen.getByRole(formElements[1].role, {
+            const inputPasswd = screen.getByRole(formElements[1].role, {
                 name: formElements[1].name,
             });
-            await userEvent.type(input, mockTyped);
-            expect(input).toHaveValue(mockTyped);
+            await userEvent.type(inputPasswd, mockTyped);
+            expect(inputPasswd).toHaveValue(mockTyped);
         });
     });
     describe('When the user clics the button', () => {

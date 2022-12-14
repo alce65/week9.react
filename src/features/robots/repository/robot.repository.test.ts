@@ -5,7 +5,7 @@ import { RobotRepository } from './robot.repository';
 describe('Given an instance of RobotRepository', () => {
     let repo: RobotRepository;
     beforeEach(() => {
-        repo = new RobotRepository('http://forCoverOptionLine');
+        repo = new RobotRepository('https://forCoverOptionLine');
         repo = new RobotRepository();
     });
 

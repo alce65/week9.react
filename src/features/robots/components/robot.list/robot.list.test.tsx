@@ -1,11 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
-// import { useRobots } from '../../hooks/use.robots';
 import { store } from '../../../../core/store/store';
 import { RobotList } from './robot.list';
-
-// jest.mock('../../hooks/use.tasks');
 
 describe('Given RobotList component and render it', () => {
     beforeEach(() => {

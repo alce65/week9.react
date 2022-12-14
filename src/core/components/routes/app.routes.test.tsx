@@ -45,7 +45,7 @@ describe('Given AppRoutes component, if the user is NOT logged', () => {
             });
         });
         test('Then it should display the HomePage', () => {
-            const title = new RegExp(pageTitles[0], 'i'); ///Test Home/i;
+            const title = new RegExp(pageTitles[0], 'i'); // Antes /Test Home/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
@@ -65,7 +65,7 @@ describe('Given AppRoutes component, if the user is NOT logged', () => {
             });
         });
         test('Then it should NOT display the FavoritesPage if the user is not logged', () => {
-            const title = new RegExp(pageTitles[1], 'i'); ///Test Favorites/i;
+            const title = new RegExp(pageTitles[1], 'i'); // Antes /Test Favorites/i;
             const element = screen.queryByText(title);
             expect(element).not.toBeInTheDocument();
         });
@@ -85,7 +85,7 @@ describe('Given AppRoutes component, if the user is NOT logged', () => {
             });
         });
         test('Then it should display the LoginPage', () => {
-            const title = new RegExp(pageTitles[2], 'i'); ///Test Login/i;
+            const title = new RegExp(pageTitles[2], 'i'); // Antes /Test Login/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
@@ -115,8 +115,6 @@ describe('Given AppRoutes component, if the user IS logged', () => {
             },
             preloadedState,
         });
-
-        // eslint-disable-next-line testing-library/no-unnecessary-act
     });
     describe(`When we render the component 
             And the route is favorites`, () => {
@@ -132,7 +130,7 @@ describe('Given AppRoutes component, if the user IS logged', () => {
                 );
             });
 
-            const title = new RegExp(pageTitles[1], 'i'); ///Test Favorites/i;
+            const title = new RegExp(pageTitles[1], 'i'); // Antes /Test Favorites/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
@@ -151,7 +149,7 @@ describe('Given AppRoutes component, if the user IS logged', () => {
                     </Provider>
                 );
             });
-            const title = new RegExp(pageTitles[3], 'i'); ///Test Logout/i;
+            const title = new RegExp(pageTitles[3], 'i'); //Antes /Test Logout/i;
             const element = screen.getByText(title);
             expect(element).toBeInTheDocument();
         });
