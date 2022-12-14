@@ -1,29 +1,9 @@
 import { robotsReducer } from './reducer';
 import { actionTypes } from './action.types';
 import { Robot } from '../models/robot';
-import { User } from '../../users/models/user';
+import { mockRobot } from '../mocks/robot';
 
 describe('Given the function robotsReducer', () => {
-    const mockUser: User = {
-        id: '1',
-        name: '',
-        email: '',
-        passwd: '',
-        role: 'admin',
-        robots: [],
-        favorites: [],
-    };
-
-    const robotMock: Robot = {
-        id: '1',
-        name: 'bot',
-        image: 'bot',
-        speed: 3,
-        resistance: 5,
-        date: new Date(),
-        owner: mockUser,
-    };
-
     let action: { type: string; payload: unknown };
     let state: { robots: Array<Robot>; actualRobot: Robot | null };
     let finalState: { robots: Array<Robot>; actualRobot: Robot | null };
@@ -32,11 +12,11 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.load,
-                payload: [robotMock],
+                payload: [mockRobot],
             };
             state = { robots: [], actualRobot: null };
             finalState = {
-                robots: [robotMock],
+                robots: [mockRobot],
                 actualRobot: null,
             };
         });
@@ -50,7 +30,7 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.add,
-                payload: robotMock,
+                payload: mockRobot,
             };
             state = { robots: [], actualRobot: null };
             finalState = {
@@ -68,9 +48,9 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.update,
-                payload: { ...robotMock, title: 'Update task' },
+                payload: { ...mockRobot, title: 'Update task' },
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
             finalState = {
                 robots: [action.payload as Robot],
                 actualRobot: null,
@@ -86,11 +66,11 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.update,
-                payload: { ...robotMock, id: '2', title: 'Update task' },
+                payload: { ...mockRobot, id: '2', title: 'Update task' },
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
             finalState = {
-                robots: [robotMock],
+                robots: [mockRobot],
                 actualRobot: null,
             };
         });
@@ -104,9 +84,9 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.delete,
-                payload: robotMock.id,
+                payload: mockRobot.id,
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
             finalState = {
                 robots: [],
                 actualRobot: null,
@@ -122,9 +102,9 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.delete,
-                payload: { ...robotMock, id: '2' },
+                payload: { ...mockRobot, id: '2' },
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
         });
         test('Then the returned state should should be the original state', () => {
             const result = robotsReducer(state, action);
@@ -136,12 +116,12 @@ describe('Given the function robotsReducer', () => {
         beforeEach(() => {
             action = {
                 type: actionTypes.select,
-                payload: robotMock,
+                payload: mockRobot,
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
             finalState = {
-                robots: [robotMock],
-                actualRobot: robotMock,
+                robots: [mockRobot],
+                actualRobot: mockRobot,
             };
         });
         test('Then the returned state should include as selected the action payload', () => {
@@ -156,7 +136,7 @@ describe('Given the function robotsReducer', () => {
                 type: '',
                 payload: null,
             };
-            state = { robots: [robotMock], actualRobot: null };
+            state = { robots: [mockRobot], actualRobot: null };
         });
         test('Then the returned state should be ...', () => {
             const result = robotsReducer(state, action);

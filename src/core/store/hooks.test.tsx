@@ -1,4 +1,3 @@
-import { ThunkDispatch } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { useAppDispatch, useAppSelector } from './hooks';
@@ -10,7 +9,6 @@ describe('Given store hooks', () => {
     );
     describe('When we use useAppDispatch', () => {
         test('Then it should return the dispatch function', () => {
-            // let current: Current;
             const { result } = renderHook(() => useAppDispatch(), { wrapper });
             const dispatch = result.current;
             // useDispatch<AppDispatch>()
@@ -21,7 +19,7 @@ describe('Given store hooks', () => {
     describe('When we use the typed useSelector', () => {
         test('Then useAppSelector should be return the selected branch of the store', () => {
             const { result } = renderHook(
-                () => useAppSelector((store) => store.robots),
+                () => useAppSelector((store) => store.robotsState),
                 { wrapper }
             );
             expect(result.current).toHaveProperty('robots');

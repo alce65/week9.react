@@ -8,10 +8,12 @@ const initialState: {
 } = { robots: [], actualRobot: null };
 
 export const robotsReducer = createReducer(initialState, (builder) => {
-    builder.addCase(ac.loadActionCreator, (state, action) => ({
-        ...state,
-        robots: action.payload,
-    }));
+    builder.addCase(ac.loadActionCreator, (state, action) => {
+        return {
+            ...state,
+            robots: action.payload,
+        };
+    });
     builder.addCase(ac.addActionCreator, (state, action) => ({
         ...state,
         robots: [...state.robots, action.payload],
