@@ -1,10 +1,10 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../../../../core/store/store';
+import { store } from '../../store/store';
 import { Sample } from './sample';
-import { useRobots } from '../../hooks/use.robots';
+import { useRobots } from '../../../features/robots/hooks/use.robots';
 
-jest.mock('../../hooks/use.robots');
+jest.mock('../../../features/robots/hooks/use.robots');
 
 test('renders Robots title', () => {
     (useRobots as jest.Mock).mockReturnValue({
