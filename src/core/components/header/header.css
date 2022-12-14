@@ -1,12 +1,23 @@
-header {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+.header__main {
+    /* background-color: var(--secondary-color);
+    color: var(--primary-color); */
     padding-block: 1rem;
     flex: 2 0 var(--header-height);
     padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
+.header__main .header__title {
     margin-block-start: 0;
     margin-block-end: 1rem;
+    font-size: calc(1rem + 4vmin);
+}
+
+@media (min-width: 600px) {
+    .header__main {
+        flex-direction: row;
+    }
 }

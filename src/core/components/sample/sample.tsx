@@ -1,5 +1,5 @@
 import { SyntheticEvent } from 'react';
-import { useRobots } from '../../hooks/use.robots';
+import { useRobots } from '../../../features/robots/hooks/use.robots';
 import logo from './logo.svg';
 export function Sample() {
     const { handleLoad } = useRobots();

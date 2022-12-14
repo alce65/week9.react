@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthCard } from '../components/auth.card/auth.card';
+import { AuthCard } from '../../../core/components/card/auth.card';
 import { Login } from '../components/login/login';
 import { Register } from '../components/register/register';
 import { useUsers } from '../hooks/use.users';

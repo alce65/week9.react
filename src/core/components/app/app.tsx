@@ -17,7 +17,7 @@ export function App() {
     }, [isUserLogged]);
 
     return (
-        <div className="App" role={'application'}>
+        <div className="app" role={'application'}>
             <Layout items={items}>
                 <AppRoutes></AppRoutes>
             </Layout>

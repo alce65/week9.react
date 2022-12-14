@@ -1,1 +1,51 @@
-/* CSS */
+.robot-item {
+    border: 1px solid var(--color_background_secondary);
+    padding-left: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+.robot-item__link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--color_secondary);
+    display: flex;
+    align-items: center;
+}
+.robot-item__link-label {
+    text-transform: capitalize;
+}
+
+.robot-item__link-sprite {
+    position: relative;
+}
+
+.robot-item__link-sprite-back {
+    position: absolute;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    z-index: 101;
+}
+
+.robot-item__link-sprite:hover .robot-item__link-sprite-front {
+    transform: rotateY(180deg);
+}
+
+.robot-item__link-sprite:hover .robot-item__link-sprite-back {
+    transform: rotateY(0deg);
+}
+
+.robot-item__link-sprite-front,
+.robot-item__link-sprite-back {
+    transition: 1s;
+}
+
+.robot-item__fav {
+    padding-top: 0.2rem;
+    padding-right: 0.2rem;
+    cursor: pointer;
+}
+
+.robot-item__fav--favorite {
+    color: var(--color_favorite);
+}
