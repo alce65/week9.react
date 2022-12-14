@@ -66,7 +66,7 @@ export function Add() {
                         name="resistance"
                         aria-label="Resistance"
                         placeholder="Resistencia media del robot (1-10)"
-                        value={formState.speed}
+                        value={formState.resistance}
                         onInput={handleInput}
                     />
                 </div>

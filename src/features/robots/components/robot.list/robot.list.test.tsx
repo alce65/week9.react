@@ -17,7 +17,7 @@ describe('Given RobotList component and render it', () => {
     describe('When the component has been render', () => {
         test('Then it should display the title', () => {
             const title = /Lista de Robots/i;
-            const element = screen.getByText(title);
+            const element = screen.getByRole('region', { name: title });
             expect(element).toBeInTheDocument();
         });
     });

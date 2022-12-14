@@ -1,1 +1,25 @@
-/* cSS */
+.robot-list {
+    margin-block-start: 1rem;
+}
+
+.robot-list__list,
+.my-robot-list__list {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+    list-style: none;
+}
+
+@media (min-width: 550px) {
+    .robot-list__list,
+    .my-robot-list__list {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (min-width: 850px) {
+    .robot-list__list,
+    .my-robot-list__list {
+        grid-template-columns: auto auto auto;
+    }
+}

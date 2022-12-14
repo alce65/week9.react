@@ -1,4 +1,5 @@
 import { Robot } from '../../models/robot';
+import './robot.card.css';
 
 export function RobotCard({ item }: { item: Robot }) {
     const robot = {
@@ -19,11 +20,15 @@ export function RobotCard({ item }: { item: Robot }) {
                         className="robot-item__link-sprite-front"
                         src={robot.sprites?.front_default}
                         alt={robot.name}
+                        width="150px"
+                        height="150px"
                     />
                     <img
                         className="robot-item__link-sprite-back"
                         src={robot.sprites?.back_default}
                         alt={robot.name}
+                        width="150px"
+                        height="150px"
                     />
                 </span>
             </a>
